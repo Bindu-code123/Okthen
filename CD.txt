@@ -1,0 +1,95 @@
+
+
+
+
+eksctl create cluster \
+--name my-eks-bindu3 \
+--region eu-north-1 \
+--nodegroup-name standard-workers \
+--node-type t3.medium \
+--nodes 1 \
+--nodes-min 1 \
+--nodes-max 1 \
+--managed
+
+
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: myfirstpod
+spec:
+  containers:
+    - name: apachecon
+      image: httpd
+      ports:
+        - containerPort: 80
+
+
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydep
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: deployment
+  template:
+    metadata:
+      name: testpod
+      labels:
+        name: deployment
+    spec:
+      containers:
+        - name: c00
+          image: ubuntu
+          command: ["/bin/bash", "-c","while true; do echo hello world; sleep 5; done"]
+
+
+
+
+AKIA4RC2QWMG5CVKT_G4D a k
+ZBs7zY7uxaqwEwKSwNpDMUYMAHJ61kFCwUiEW_uCr s a ke
+
+
+
+
+
+
+
+
+
+
+
+
+vi mydeploy.yml
+ 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydep
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: deployment
+  template:
+    metadata:
+      name: testpod
+      labels:
+        name: deployment
+    spec:
+      containers:
+        - name: c00
+          image: ubuntu
+          command: ["/bin/bash", "-c","while true; do echo hello world; sleep 5; done"]
+ 
+ 
+kubectl apply -f mydeploy.yml
+ 
+ kubectl get all
+ kubectl get pods
+ kubectl get deploy
