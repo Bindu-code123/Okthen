@@ -8,10 +8,7 @@
 
 <body>
 
-    <h1>Welcome to Jenkins Tomcat Deployment</h1>
-
-    <h2>Application Successfully Deployed!</h2>
-
+    <h1>BINDU BUDDI</h1>
 </body>
 
 </html>
