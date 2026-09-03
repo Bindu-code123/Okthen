@@ -8,7 +8,7 @@
 
 <body>
 
-    <h1>HELLO SPYY ERROR SLOVE AYINDHA</h1>
+    <h1>SPELLINGS CHUDAKU</h1>
 </body>
 
 </html>
